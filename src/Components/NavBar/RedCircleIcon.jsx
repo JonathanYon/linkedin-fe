@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 function RedCircleIcon(props) {
   return (
@@ -13,7 +13,7 @@ function RedCircleIcon(props) {
         {/* <div className="inner-white-circle d-flex justify-content-center align-items-center"></div> */}
       </div>
     </div>
-  )
+  );
 }
 
-export default RedCircleIcon
+export default RedCircleIcon;

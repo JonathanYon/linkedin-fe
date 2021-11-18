@@ -1,7 +1,7 @@
-import React from "react"
+import React from "react";
 
 function TriangleIcon() {
-  return <div className="triangle-Icon"></div>
+  return <div className="triangle-Icon"></div>;
 }
 
-export default TriangleIcon
+export default TriangleIcon;

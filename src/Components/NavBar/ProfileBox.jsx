@@ -1,25 +1,32 @@
-import { Button, Col, Image, ListGroup } from "react-bootstrap"
-import { withRouter } from "react-router"
+import { Button, Col, Image, ListGroup } from "react-bootstrap";
+import { withRouter } from "react-router";
 
 const ProfileBox = (props) => (
   <ListGroup id="profile-Box" className="list-groupMod">
     <ListGroup.Item className="ListGroupItem">
       <div className="image-colMod d-flex">
         <Image
-          src={window.localStorage.getItem('image')}
+          src={window.localStorage.getItem("image")}
           width="48px"
           roundedCircle
           className="align-self-start inner-avatar"
         />
         <Col>
-          <span className="font-weight-bolder">{window.localStorage.getItem('name') + ' ' + window.localStorage.getItem('surname')}</span>
-          <p className="m-0">
-            {window.localStorage.getItem('title')}
-          </p>
+          <span className="font-weight-bolder">
+            {window.localStorage.getItem("name") +
+              " " +
+              window.localStorage.getItem("surname")}
+          </span>
+          <p className="m-0">{window.localStorage.getItem("title")}</p>
         </Col>
       </div>
       <div className="d-grid mt-2 font-weight-bolder">
-        <Button onClick={() => props.history.push('profile')} id="btn-blockMod" variant="outline-primary" block>
+        <Button
+          onClick={() => props.history.push("profile")}
+          id="btn-blockMod"
+          variant="outline-primary"
+          block
+        >
           View Profile
         </Button>
       </div>
@@ -46,14 +53,18 @@ const ProfileBox = (props) => (
       </Button>
     </ListGroup.Item>
     <ListGroup.Item>
-      <Button variant="link" className="btn-linkMod" onClick={() => {
-        props.history.push('/')
-        window.localStorage.clear()
-        props.setShowTopNavBar(false)
-      }}>
+      <Button
+        variant="link"
+        className="btn-linkMod"
+        onClick={() => {
+          props.history.push("/");
+          window.localStorage.clear();
+          props.setShowTopNavBar(false);
+        }}
+      >
         Sign Out
       </Button>
     </ListGroup.Item>
   </ListGroup>
-)
-export default withRouter(ProfileBox)
+);
+export default withRouter(ProfileBox);
