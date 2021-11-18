@@ -26,12 +26,12 @@
 }
 
 #svg-sidehome1 {
-  margin-left: 0px!important; 
+  margin-left: 0px !important;
   padding-bottom: 2px;
 }
 
 #svg-sidehome2 {
-  margin-left: 0px!important; 
+  margin-left: 0px !important;
   padding-bottom: 2px;
 }
 
@@ -47,11 +47,11 @@
 }
 
 .external-icon svg {
-    opacity: 0;
+  opacity: 0;
 }
 
 .hoverable-link1:hover .external-icon svg {
-    opacity: 1;
+  opacity: 1;
 }
 
 .promoted-sidehome:hover {
@@ -61,21 +61,21 @@
 /* Sidebar on clicking Work in Navbar - component Sidebar.jsx*/
 
 #modal-sidebar {
-  position: absolute!important;
+  position: absolute !important;
   right: 0;
   margin: auto;
   -webkit-transform: translate3d(0%, 0, 0);
   -ms-transform: translate3d(0%, 0, 0);
-   -o-transform: translate3d(0%, 0, 0);
-      transform: translate3d(0%, 0, 0);
+  -o-transform: translate3d(0%, 0, 0);
+  transform: translate3d(0%, 0, 0);
 }
 
 .modalfade-sidebar .modal-sidebar {
   right: -320px;
   -webkit-transition: opacity 3s linear, right 3s ease-out;
-     -moz-transition: opacity 3s linear, right 3s ease-out;
-       -o-transition: opacity 3s linear, right 3s ease-out;
-          transition: opacity 3s linear, right 3s ease-out;
+  -moz-transition: opacity 3s linear, right 3s ease-out;
+  -o-transition: opacity 3s linear, right 3s ease-out;
+  transition: opacity 3s linear, right 3s ease-out;
 }
 
 .modalfade-sidebar.in .modal-sidebar {
@@ -86,4 +86,3 @@
   overflow-y: auto;
   height: 100vh;
 }
-

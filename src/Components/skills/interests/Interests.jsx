@@ -22,7 +22,7 @@ const Interests = () => {
               </div>
             </div>
 
-           <div className="d-flex  w-50 width100">
+            <div className="d-flex  w-50 width100">
               <div className="interests">
                 <img
                   src="https://rosenfeldmedia.com/enterprise2019/wp-content/uploads/sites/13/2018/03/cisco-logo.png"
@@ -33,13 +33,9 @@ const Interests = () => {
                 <div className="interests_title">Cisco</div>
                 <div className="interests_views">595,675 viewers</div>
               </div>
-           </div>
+            </div>
           </div>
-          
-          
         </div>
-        
-        
       </div>
       <div className="show_more_container py-2">
         <span>Show more</span>

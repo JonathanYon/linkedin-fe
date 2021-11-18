@@ -151,7 +151,6 @@
 
 .border-2-4rem {
   border-radius: 2.4rem;
-  
 }
 
 .space-between {
@@ -174,42 +173,40 @@
   color: white;
 }
 
-.verticalAlign{
+.verticalAlign {
   vertical-align: inherit;
 }
 
-.btn-outline-uploadXPImage:hover{
+.btn-outline-uploadXPImage:hover {
   background-color: #3790e945 !important;
-      border-color: #004182 !important;
-      border: 3px solid !important;
-      box-shadow: none !important;
-      color: #007bff !important;
-
+  border-color: #004182 !important;
+  border: 3px solid !important;
+  box-shadow: none !important;
+  color: #007bff !important;
 }
 
-.font-small{
+.font-small {
   font-size: 13px !important;
 }
 
-.saveExpImg-padding-Mod{
+.saveExpImg-padding-Mod {
   padding: 2px 16px;
 }
 
-.upLoadXPImage-YMod{
+.upLoadXPImage-YMod {
   transform: translateY(-2px);
 }
 
-.show-Exp-image-preview{
+.show-Exp-image-preview {
 }
 
-.show-Exp-image-preview > img{
+.show-Exp-image-preview > img {
   max-height: 200px;
   max-width: 340px;
   object-fit: cover;
-
 }
 
-.mouseCursor{
+.mouseCursor {
   cursor: pointer;
 }
 
@@ -296,7 +293,7 @@
   }
 }
 
-#profile-Box .inner-avatar{
+#profile-Box .inner-avatar {
   height: 48px;
   object-fit: cover;
   width: 48px;

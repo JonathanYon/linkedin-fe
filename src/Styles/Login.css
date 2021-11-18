@@ -21,7 +21,7 @@ html {
 #login-btn {
   border-radius: 500px;
   width: 40%;
-  color: white!important;
+  color: white !important;
 }
 
 .logo-btn-FB {
@@ -29,7 +29,6 @@ html {
   background-color: #1877f2;
   padding: 14px 18px;
 }
-
 
 .logo-btn-apple {
   border-radius: 500px;
@@ -39,7 +38,6 @@ html {
 .apple-text {
   color: white;
 }
-
 
 .btn-text {
   margin-left: 8px;
@@ -68,13 +66,11 @@ html {
   padding: 14px 18px;
 }
 
-
 .loginp {
   color: grey;
   font-size: 12px;
 }
 
-
-.orModtranslate{
+.orModtranslate {
   transform: translateY(-3px);
 }
