@@ -3,7 +3,6 @@ import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
 import { useEffect } from "react";
 
-
 const DeleteModal = (props) => {
   const [text, setText] = useState();
   const [textEdit, setTextEdit] = useState();
@@ -19,7 +18,8 @@ const DeleteModal = (props) => {
   const handleEdit = async () => {
     console.log(props.id, "unique ID");
     try {
-      let response = await fetch(`${process.env.REACT_APP_DEV_URL}posts/${props.id}`,
+      let response = await fetch(
+        `${process.env.REACT_APP_DEV_URL}posts/${props.id}`,
         {
           method: "GET",
         }

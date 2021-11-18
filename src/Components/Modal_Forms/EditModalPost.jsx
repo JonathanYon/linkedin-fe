@@ -7,16 +7,16 @@ const EditModalPost = (props) => {
   const [text, setText] = useState();
   const [textEdit, setTextEdit] = useState();
   const [imgEdit, setImgEdit] = useState();
-  const [uploadNewImage, setUploadNewImage] = useState()
+  const [uploadNewImage, setUploadNewImage] = useState();
 
   const handleChange = (key, value) => {
-    setText({[key]: value});
+    setText({ [key]: value });
   };
 
-  useEffect(() =>handleEdit(), [])
+  useEffect(() => handleEdit(), []);
 
   const handleEdit = async () => {
-    console.log(props.id, "unique ID")
+    console.log(props.id, "unique ID");
     try {
       let response = await fetch(
         `${process.env.REACT_APP_DEV_URL}posts/${props.id}`,
@@ -27,13 +27,13 @@ const EditModalPost = (props) => {
           //   "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
           // },
         }
-        );
-        let data = await response.json()
-        setTextEdit(data.text)
-        // URL from the image at the first reload
-        {data.image &&
-        setImgEdit(data.image)
-        }
+      );
+      let data = await response.json();
+      setTextEdit(data.text);
+      // URL from the image at the first reload
+      {
+        data.image && setImgEdit(data.image);
+      }
     } catch (e) {
       console.log(e);
       return e;
@@ -42,8 +42,8 @@ const EditModalPost = (props) => {
 
   const handleSubmit = async () => {
     try {
-
-      let response = await fetch( `${process.env.REACT_APP_DEV_URL}posts/${props.id}`,
+      let response = await fetch(
+        `${process.env.REACT_APP_DEV_URL}posts/${props.id}`,
         // "https://striveschool-api.herokuapp.com/api/posts/" + props.id,
         {
           method: "PUT",
@@ -54,11 +54,11 @@ const EditModalPost = (props) => {
           body: JSON.stringify(text),
         }
       );
-      if (uploadNewImage){
-        sendImage()
-      }else {
-        props.setShow(false)
-        props.renderAgain()
+      if (uploadNewImage) {
+        sendImage();
+      } else {
+        props.setShow(false);
+        props.renderAgain();
       }
     } catch (e) {
       console.log(e);
@@ -68,30 +68,31 @@ const EditModalPost = (props) => {
 
   const sendImage = async () => {
     try {
-      let response = await fetch(`${process.env.REACT_APP_DEV_URL}posts/${props.id}`,
+      let response = await fetch(
+        `${process.env.REACT_APP_DEV_URL}posts/${props.id}`,
         // "https://striveschool-api.herokuapp.com/api/posts/" + props.id,
         {
           method: "POST",
           // headers: {
           //   "Authorization": "Bearer " + window.localStorage.getItem('user_Token'),
           // },
-          body: uploadNewImage
+          body: uploadNewImage,
         }
       );
     } catch (e) {
       console.log(e);
       return e;
     }
-    props.setShow(false)
-    props.renderAgain()
-  }
+    props.setShow(false);
+    props.renderAgain();
+  };
   const imageHandler = (e) => {
-    let postImage = new FormData()
-    postImage.append('image', e.target.files[0])
-    setUploadNewImage(postImage)
-    
+    let postImage = new FormData();
+    postImage.append("image", e.target.files[0]);
+    setUploadNewImage(postImage);
+
     // set preview
-    setImgEdit(URL.createObjectURL(e.target.files[0]))
+    setImgEdit(URL.createObjectURL(e.target.files[0]));
     // reader.setImgEdit(e.target.files[0]) ()
   };
 
@@ -122,14 +123,12 @@ const EditModalPost = (props) => {
                 rows={3}
                 placeholder="What do you want to talk about?"
                 className="post-area"
-                onChange={(e) => handleChange('text', e.target.value)}
+                onChange={(e) => handleChange("text", e.target.value)}
               />
             </Form.Group>
           </div>
           <div className="img-upload">
-            {imgEdit &&
-            <img src={imgEdit} className="img-fluid" alt="" />
-            }
+            {imgEdit && <img src={imgEdit} className="img-fluid" alt="" />}
           </div>
           <div className="create-post-body-footer d-flex pt-2">
             <div className="create-post-body-footer-icons d-flex justify-content-around">
@@ -148,22 +147,27 @@ const EditModalPost = (props) => {
                 </svg>
               </span>
               <span>
-              <input type="file" className="d-none" name="arquivo" id="arquivo" onChange={imageHandler}/>
-              <label htmlFor="arquivo">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  data-supported-dps="24x24"
-                  fill="currentColor"
-                  className="mercado-match"
-                  width="24"
-                  height="24"
-                  focusable="false"
-                >
-                  <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z"></path>
-                </svg>
-
-              </label>
+                <input
+                  type="file"
+                  className="d-none"
+                  name="arquivo"
+                  id="arquivo"
+                  onChange={imageHandler}
+                />
+                <label htmlFor="arquivo">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    data-supported-dps="24x24"
+                    fill="currentColor"
+                    className="mercado-match"
+                    width="24"
+                    height="24"
+                    focusable="false"
+                  >
+                    <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z"></path>
+                  </svg>
+                </label>
               </span>
               <span>
                 <svg
