@@ -14,16 +14,29 @@ const LeftProfile = (props) => {
           <div className="profile-pic-side mouseCursor">
             <div
               className="bg-photo-side"
-              style={{ backgroundImage: `url(${window.localStorage.getItem('image') ? window.localStorage.getItem('image') : 'https://keyrecruitment.co.za/wp-content/uploads/2013/10/image.jpg'})` }}
-              onClick={() => props.history.push('profile')}
+              style={{
+                backgroundImage: `url(${
+                  window.localStorage.getItem("image")
+                    ? window.localStorage.getItem("image")
+                    : "https://keyrecruitment.co.za/wp-content/uploads/2013/10/image.jpg"
+                })`,
+              }}
+              onClick={() => props.history.push("profile")}
             ></div>
           </div>
         </div>
 
         <Col className="details-profile-side">
-          <h6 className="mb-0 text-center mouseCursor" onClick={() => props.history.push('profile')} >{window.localStorage.getItem('name') + ' ' + window.localStorage.getItem('surname')}</h6>
+          <h6
+            className="mb-0 text-center mouseCursor"
+            onClick={() => props.history.push("profile")}
+          >
+            {window.localStorage.getItem("name") +
+              " " +
+              window.localStorage.getItem("surname")}
+          </h6>
           <p className="mb-0 text-center about-side">
-            {window.localStorage.getItem('title')}
+            {window.localStorage.getItem("title")}
           </p>
           <p className="text-muted details-region">
             <span className="span-details"></span>
@@ -33,8 +46,14 @@ const LeftProfile = (props) => {
           </p>
         </Col>
         <Col className="side-middle">
-          <div className="d-flex justify-content-between align-items-center"><p className="mb-0 about-side-middle">Who viewed your profile</p><span className="span-side">11</span></div>
-          <div className="d-flex justify-content-between align-items-center"><p className="mb-0 about-side-middle">Views of your post</p><span className="span-side">46</span></div>
+          <div className="d-flex justify-content-between align-items-center">
+            <p className="mb-0 about-side-middle">Who viewed your profile</p>
+            <span className="span-side">11</span>
+          </div>
+          <div className="d-flex justify-content-between align-items-center">
+            <p className="mb-0 about-side-middle">Views of your post</p>
+            <span className="span-side">46</span>
+          </div>
         </Col>
         <Col className="side-middle">
           <p className="mb-0 about-side">Exclusive tools & insights</p>
@@ -79,7 +98,7 @@ const LeftProfile = (props) => {
         </Col>
       </div>
       <div>
-         <SideBellow /> 
+        <SideBellow />
       </div>
     </>
   );

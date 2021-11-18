@@ -1,7 +1,7 @@
 import { Row, Col } from "react-bootstrap";
 // import "../../Styles/FooterChatAlsoViewed.css";
 import { RiSettings2Fill, RiQuestionFill } from "react-icons/ri";
-import '../../Styles/MediaQuery.css'
+import "../../Styles/MediaQuery.css";
 
 const Footer = () => {
   return (
@@ -44,7 +44,7 @@ const Footer = () => {
             <a href="#">Safety Center</a>
           </div>
         </Col>
-        <Col className="d-none d-md-block" >
+        <Col className="d-none d-md-block">
           <div className="my-1">
             <a href="#">Accessibility</a>
           </div>
@@ -115,7 +115,6 @@ const Footer = () => {
           </div>
         </Col>
         <Col sm={4} md={3} className="last-col centerFlex ml-2 mt-16">
-
           <label className="select-label d-none d-md-block mb-0">
             Select Language
           </label>
@@ -197,7 +196,10 @@ const Footer = () => {
       </Row>
       <Row>
         <Col sm={12} className="pl-1">
-          <p className="copyRight textCenterMod"> Linkedin Corporation &copy; 2021</p>
+          <p className="copyRight textCenterMod">
+            {" "}
+            Linkedin Corporation &copy; 2021
+          </p>
         </Col>
       </Row>
     </div>

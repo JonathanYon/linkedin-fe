@@ -5,16 +5,15 @@ import TextPost from "../postsComponents/TextPost";
 import Likes from "../postsComponents/Likes";
 import Reactions from "../postsComponents/Reactions";
 import CommentsArea from "../postsComponents/Comment/CommentsArea";
-import {useState} from 'react'
+import { useState } from "react";
 
 const Feed = (props) => {
-  const [showCommentArea, setShowCommentArea] = useState(false)
+  const [showCommentArea, setShowCommentArea] = useState(false);
 
   return (
     <>
       <Col className="feed-area p-0">
         <HeaderPost
-          
           renderAgain={props.renderAgain}
           postId={props.data._id}
           id={props.data.user._id}
@@ -31,12 +30,26 @@ const Feed = (props) => {
         )}
       </Col>
       <Col className="feed-area-end px-0 mb-3">
-        
-        <Likes likesQty={props.data.likes.length} commentsQty={props.data.comments.length} />
-        <Reactions renderAgain={props.renderAgain} postId={props.data._id} setShowCommentArea={setShowCommentArea} showCommentArea={showCommentArea} />
+        <Likes
+          likesQty={props.data.likes.length}
+          commentsQty={props.data.comments.length}
+        />
+        <Reactions
+          renderAgain={props.renderAgain}
+          postId={props.data._id}
+          setShowCommentArea={setShowCommentArea}
+          showCommentArea={showCommentArea}
+        />
         {/* {console.log(props.data, "Before comments")} */}
-        {showCommentArea ? <CommentsArea renderAgain={props.renderAgain} postId={props.data._id} comments={props.data.comments}/>: <></>}
-        
+        {showCommentArea ? (
+          <CommentsArea
+            renderAgain={props.renderAgain}
+            postId={props.data._id}
+            comments={props.data.comments}
+          />
+        ) : (
+          <></>
+        )}
       </Col>
     </>
   );
