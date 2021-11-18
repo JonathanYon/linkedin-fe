@@ -12,8 +12,14 @@ const About = () => {
 
   const getUserData = async () => {
     try {
-      let response = await fetch(`${process.env.REACT_APP_DEV_URL}profile/me/${window.localStorage.getItem('_id')}`,{
-          method: "Get",});
+      let response = await fetch(
+        `${
+          process.env.REACT_APP_DEV_URL
+        }profile/me/${window.localStorage.getItem("_id")}`,
+        {
+          method: "Get",
+        }
+      );
       let userData = await response.json();
       let userDataKeyList = Object.keys(userData);
       setuserData(userData);

@@ -1,24 +1,24 @@
-import React from "react"
-import "../Styles/Login.css"
-import { useState } from "react"
-import { withRouter } from "react-router"
+import React from "react";
+import "../Styles/Login.css";
+import { useState } from "react";
+import { withRouter } from "react-router";
 // import TransitionPage from "../Components/RaiaComponents/TransitionPage"
 
 function Login(props) {
-  const [login, setLogin] = useState("")
-  const [loginValidation, setLoginValidation] = useState(false)
-  const [isTransitionPage, setTransitionPage] = useState(false)
+  const [login, setLogin] = useState("");
+  const [loginValidation, setLoginValidation] = useState(false);
+  const [isTransitionPage, setTransitionPage] = useState(false);
 
   const handleForm = (key, value) => {
     setLogin({
       ...login,
       [key]: value,
-    })
-  }
+    });
+  };
 
-  console.log(process.env.REACT_APP_DEV_URL, 'denv')
+  console.log(process.env.REACT_APP_DEV_URL, "denv");
   const getUserToken = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       // console.log(login, 'register')
       let response = await fetch(
@@ -31,55 +31,52 @@ function Login(props) {
           },
           body: JSON.stringify(login),
         }
-      )
+      );
       if (response.ok) {
         // let userToken = await response.json()
         // console.log(userToken, "dsadas dsainside toekn")
         // window.localStorage.setItem("user_Token", userToken.access_token)
-        let userResponse = await response.json()
-        console.log(userResponse, '<<<<User response')
-        getUserData(userResponse)
+        let userResponse = await response.json();
+        console.log(userResponse, "<<<<User response");
+        getUserData(userResponse);
       } else {
-        setLoginValidation(true)
+        setLoginValidation(true);
       }
     } catch (err) {
-      setLoginValidation(true)
-      console.log(err)
-      return err
+      setLoginValidation(true);
+      console.log(err);
+      return err;
     }
-  }
+  };
 
   const getUserData = async (userResponse) => {
     // let userToken = "Bearer " + window.localStorage.getItem('user_Token')
     // console.log(userToken)
     try {
-    //   let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
-    //     method: 'Get',
-    //     headers: {
-    //       "Authorization": userToken,
-    //     },
+      //   let response = await fetch('https://striveschool-api.herokuapp.com/api/profile/me', {
+      //     method: 'Get',
+      //     headers: {
+      //       "Authorization": userToken,
+      //     },
 
-    //   })
-    //   if (response.ok) {
-        let userData = await userResponse
-        if (userData.name === undefined) {
-          setLoginValidation(true)
-          return
-        }
-        setTransitionPage(true)
-        let userDataKeyList = Object.keys(userData)
-        userDataKeyList.forEach(key => window.localStorage.setItem(key, userData[key]))
-        props.history.push('transitionPage')
-       
-       
-      
-
+      //   })
+      //   if (response.ok) {
+      let userData = await userResponse;
+      if (userData.name === undefined) {
+        setLoginValidation(true);
+        return;
+      }
+      setTransitionPage(true);
+      let userDataKeyList = Object.keys(userData);
+      userDataKeyList.forEach((key) =>
+        window.localStorage.setItem(key, userData[key])
+      );
+      props.history.push("transitionPage");
     } catch (e) {
-      console.log(e)
-      return e
-
+      console.log(e);
+      return e;
     }
-  }
+  };
 
   return (
     <div
@@ -211,7 +208,7 @@ function Login(props) {
                 a
                 ria-describedby="usernameHelp"
                 onChange={(e) => {
-                  handleForm("username", e.target.value)
+                  handleForm("username", e.target.value);
                 }}
               />
             </div>
@@ -222,7 +219,7 @@ function Login(props) {
                 className="form-control"
                 id="exampleInputPassword1"
                 onChange={(e) => {
-                  handleForm("password", e.target.value)
+                  handleForm("password", e.target.value);
                 }}
               />
             </div>
@@ -280,7 +277,7 @@ function Login(props) {
         </div>
       </main>
     </div>
-  )
+  );
 }
 
-export default withRouter(Login)
+export default withRouter(Login);

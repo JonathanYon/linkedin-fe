@@ -1,9 +1,8 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 const Dashboard = () => {
   return (
     <>
-   
       <div className="dashboard">
         <div className="dashboard-top-container">
           <h5>Your Dashboard</h5>

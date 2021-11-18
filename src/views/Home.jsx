@@ -13,7 +13,6 @@ const Home = (props) => {
     getAllPosts();
   };
 
-
   const getAllPosts = async () => {
     try {
       let response = await fetch(

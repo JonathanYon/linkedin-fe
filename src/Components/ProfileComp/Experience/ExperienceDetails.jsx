@@ -15,7 +15,9 @@ const ExperienceDetails = (props) => {
       <div className="pl-4 experience-border w-100">
         <div className="company-details">
           <h6 className="mt-3">{props.userExperience.role}</h6>
-          <p className="company-title mb-0">{props.userExperience.company} - {props.userExperience.area}</p>
+          <p className="company-title mb-0">
+            {props.userExperience.company} - {props.userExperience.area}
+          </p>
           <p className="company-duration">
             <span>
               {format(new Date(props.userExperience.startDate), "dd-MM-yyyy")}
@@ -29,21 +31,35 @@ const ExperienceDetails = (props) => {
           </p> */}
         </div>
         <div className="d-flex company-details justify-content-start">
-          <p className="company-title set-size-company-title justify-content-start">{props.userExperience.description}
+          <p className="company-title set-size-company-title justify-content-start">
+            {props.userExperience.description}
           </p>
-
         </div>
-        {props.userExperience.image && <div className="set-size">
-          <img src={props.userExperience.image} alt="" style={{maxHeight: '256px', maxWidth: '256px', objectFit:'cover'}} />
-        </div>}
+        {props.userExperience.image && (
+          <div className="set-size">
+            <img
+              src={props.userExperience.image}
+              alt=""
+              style={{
+                maxHeight: "256px",
+                maxWidth: "256px",
+                objectFit: "cover",
+              }}
+            />
+          </div>
+        )}
       </div>
       <ModalAddNewExperience
         show={modalShow}
         endpoint={
-          `${process.env.REACT_APP_DEV_URL}profile/experience/${window.localStorage.getItem('_id')}/update/${props.userExperience._id}`
+          `${
+            process.env.REACT_APP_DEV_URL
+          }profile/experience/${window.localStorage.getItem("_id")}/update/${
+            props.userExperience._id
+          }`
           // 'https://striveschool-api.herokuapp.com/api/profile/' + window.localStorage.getItem('_id') + '/experiences/' + props.userExperience._id
         }
-        requestmethod='PUT'
+        requestmethod="PUT"
         changeExpImg={props.changeExpImg}
         setIsLoading={props.setIsLoading}
         setchangeExpImg={props.setchangeExpImg}

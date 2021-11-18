@@ -3,7 +3,7 @@ import { Col } from "react-bootstrap";
 import ModalAddNewExperience from "../Modal_Forms/ModalAddNewExperience";
 
 const SectionProfile = (props) => {
-  const [modalShow, setModalShow] = React.useState(false)
+  const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <Col className="mt-4 ml-2 d-flex justify-content-between">
@@ -15,18 +15,18 @@ const SectionProfile = (props) => {
         // need to change the id to the user id
         endpoint={
           // 'https://striveschool-api.herokuapp.com/api/profile/' + window.localStorage.getItem('_id') + '/experiences'
-          `${process.env.REACT_APP_DEV_URL}profile/experience/${window.localStorage.getItem('_id')}`
-        
+          `${
+            process.env.REACT_APP_DEV_URL
+          }profile/experience/${window.localStorage.getItem("_id")}`
         }
-        requestmethod='POST'
+        requestmethod="POST"
         setIsLoading={props.setIsLoading}
         changeExpImg={props.changeExpImg}
         setchangeExpImg={props.setchangeExpImg}
         changeUserData={props.changeUserData}
         setchangeuserdata={props.setchangeuserdata}
-        onHide={() => setModalShow(false)}>
-      </ModalAddNewExperience>
-
+        onHide={() => setModalShow(false)}
+      ></ModalAddNewExperience>
 
       <div className="btn-plus" onClick={() => setModalShow(true)}>
         <svg

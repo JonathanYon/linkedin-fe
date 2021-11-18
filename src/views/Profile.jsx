@@ -10,9 +10,8 @@ import Experience from "../Components/ProfileComp/Experience/Experience";
 import Interests from "../Components/skills/interests/Interests";
 import Skills from "../Components/skills/interests/Skills";
 
-
 const Profile = (props) => {
-  props.setShowTopNavBar(true)
+  props.setShowTopNavBar(true);
   return (
     <Container>
       <Row>
