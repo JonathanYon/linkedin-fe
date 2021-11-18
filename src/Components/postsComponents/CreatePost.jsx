@@ -5,7 +5,7 @@ import { useState } from "react";
 const CreatePost = (props) => {
   const [text, setText] = useState();
   const [img, setImg] = useState();
-  const [imgToSend, setImgToSend] = useState('');
+  const [imgToSend, setImgToSend] = useState("");
 
   const handleChange = (key, value) => {
     setText({ [key]: value });
@@ -13,7 +13,7 @@ const CreatePost = (props) => {
 
   const handleSubmit = async () => {
     try {
-      text.user = window.localStorage.getItem('_id')
+      text.user = window.localStorage.getItem("_id");
       let response = await fetch(
         `${process.env.REACT_APP_DEV_URL}posts`,
         // "https://striveschool-api.herokuapp.com/api/posts/",
@@ -27,13 +27,13 @@ const CreatePost = (props) => {
         }
       );
 
-      let data = await response.json()
-      let postId = data._id
+      let data = await response.json();
+      let postId = data._id;
       if (imgToSend) {
-        sendImage(postId)
+        sendImage(postId);
       } else {
-        props.handleClose()
-        props.renderAgain()
+        props.handleClose();
+        props.renderAgain();
       }
     } catch (e) {
       console.log(e);
@@ -43,36 +43,37 @@ const CreatePost = (props) => {
 
   const sendImage = async (id) => {
     try {
-      let response = await fetch(`${process.env.REACT_APP_DEV_URL}posts/${id}`,
+      let response = await fetch(
+        `${process.env.REACT_APP_DEV_URL}posts/${id}`,
         // "https://striveschool-api.herokuapp.com/api/posts/" + id,
         {
           method: "POST",
           // headers: {
           //   "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGRjNWYwNmIzNTgxNzAwMTVjMjI3MDUiLCJpYXQiOjE2MzEwMzI0MTcsImV4cCI6MTYzMjI0MjAxN30.GuRCNEbL0_j5DW_1nAVACUZMQ9DKww6hz1cHkUQOD34",
           // },
-          body: imgToSend
+          body: imgToSend,
         }
       );
     } catch (e) {
       console.log(e);
       return e;
     }
-    props.handleClose()
-    props.renderAgain()
-  }
+    props.handleClose();
+    props.renderAgain();
+  };
 
   const imageHandler = (e) => {
-    let postImage = new FormData()
-    postImage.append('image', e.target.files[0])
-    setImgToSend(postImage)
+    let postImage = new FormData();
+    postImage.append("image", e.target.files[0]);
+    setImgToSend(postImage);
 
     const reader = new FileReader();
     reader.onload = () => {
       if (reader.readyState === 2) {
-        setImg(reader.result)
+        setImg(reader.result);
       }
-    }
-    reader.readAsDataURL(e.target.files[0])
+    };
+    reader.readAsDataURL(e.target.files[0]);
   };
 
   return (
@@ -136,14 +137,12 @@ const CreatePost = (props) => {
                   rows={3}
                   placeholder="What do you want to talk about?"
                   className="post-area"
-                  onChange={(e) => handleChange('text', e.target.value)}
+                  onChange={(e) => handleChange("text", e.target.value)}
                 />
               </Form.Group>
             </div>
             <div className="img-upload">
-              {img &&
-                <img src={img} className="img-fluid" alt="" />
-              }
+              {img && <img src={img} className="img-fluid" alt="" />}
             </div>
             <div>
               <span className="btn-add-hashtag">Add hashtag</span>
@@ -165,7 +164,6 @@ const CreatePost = (props) => {
                   </svg>
                 </span>
                 <span className="input-file">
-
                   <label for="arquivo">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -180,8 +178,12 @@ const CreatePost = (props) => {
                       <path d="M19 4H5a3 3 0 00-3 3v10a3 3 0 003 3h14a3 3 0 003-3V7a3 3 0 00-3-3zm1 13a1 1 0 01-.29.71L16 14l-2 2-6-6-4 4V7a1 1 0 011-1h14a1 1 0 011 1zm-2-7a2 2 0 11-2-2 2 2 0 012 2z"></path>
                     </svg>
                   </label>
-                  <input type="file" name="arquivo" id="arquivo" onChange={imageHandler} />
-
+                  <input
+                    type="file"
+                    name="arquivo"
+                    id="arquivo"
+                    onChange={imageHandler}
+                  />
                 </span>
                 <span>
                   <svg

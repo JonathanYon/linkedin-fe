@@ -7,7 +7,7 @@ const TextPost = (props) => {
     setDisplayText(text);
   };
 
-  const shortText = props.post.text.slice(0,200);
+  const shortText = props.post.text.slice(0, 200);
 
   const completeText = props.post.text;
 

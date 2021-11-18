@@ -1,6 +1,11 @@
 import ReactionsHover from "./ReactionsHover";
 
-const Reactions = ({setShowCommentArea, showCommentArea, postId, renderAgain}) => {
+const Reactions = ({
+  setShowCommentArea,
+  showCommentArea,
+  postId,
+  renderAgain,
+}) => {
   return (
     <div className="d-flex mt-3 mb-2 px-3 position-relative d-flex justify-content-between align-items-center">
       <div className="bg-reactions like-display">
@@ -19,9 +24,14 @@ const Reactions = ({setShowCommentArea, showCommentArea, postId, renderAgain}) =
           </svg>
         </span>
         <span className="ml-1 reactions-titles">Like</span>
-        <ReactionsHover renderAgain={renderAgain} postId={postId}/>
+        <ReactionsHover renderAgain={renderAgain} postId={postId} />
       </div>
-      <div className="bg-reactions" onClick={()=> setShowCommentArea(showCommentArea => !showCommentArea)}>
+      <div
+        className="bg-reactions"
+        onClick={() =>
+          setShowCommentArea((showCommentArea) => !showCommentArea)
+        }
+      >
         <span>
           <svg
             xmlns="http://www.w3.org/2000/svg"

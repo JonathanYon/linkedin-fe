@@ -1,23 +1,28 @@
-
 import PopUpUser from "./PopUpUser";
 const PostUser = (props) => {
   return (
     <div className="d-flex align-items-center px-3">
       <div className="img-post-feed my-3 position-relative">
-        <img src={props.post.user.image ? props.post.user.image : 'https://keyrecruitment.co.za/wp-content/uploads/2013/10/image.jpg'} className="circle-img-post" alt="" />
+        <img
+          src={
+            props.post.user.image
+              ? props.post.user.image
+              : "https://keyrecruitment.co.za/wp-content/uploads/2013/10/image.jpg"
+          }
+          className="circle-img-post"
+          alt=""
+        />
       </div>
       <div className="ml-2 my-3 w-100">
         <div className="d-flex mb-0 align-items-center">
-          <h6 className="mb-0 mr-1 h6-post links-feed display-popup">{props.post.user.name + ' ' + props.post.user.surname}
+          <h6 className="mb-0 mr-1 h6-post links-feed display-popup">
+            {props.post.user.name + " " + props.post.user.surname}
             <PopUpUser post={props.post} />
           </h6>
           <h6 className="mb-0 span-feed"> • 2nd</h6>
-
         </div>
         <div className="mr-1 d-flex justify-content-between align-items-center">
-          <p className="mb-0 about-feed">
-            {props.post.user.title}
-          </p>
+          <p className="mb-0 about-feed">{props.post.user.title}</p>
         </div>
         <p className="d-flex mb-0 align-items-center">
           <span className="about-feed">1d • </span>

@@ -1,31 +1,29 @@
-const ReactionsHover = ({postId, renderAgain}) => {
-
+const ReactionsHover = ({ postId, renderAgain }) => {
   const toggleLike = async (e) => {
     try {
-        e.preventDefault()
-        let response = await fetch(`${process.env.REACT_APP_DEV_URL}posts/${postId}/like`,
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({userId: window.localStorage.getItem('_id')}),
-            }
-        );
-        const serverResponse = await response.json()
-        console.log(serverResponse)
-        renderAgain()
+      e.preventDefault();
+      let response = await fetch(
+        `${process.env.REACT_APP_DEV_URL}posts/${postId}/like`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ userId: window.localStorage.getItem("_id") }),
+        }
+      );
+      const serverResponse = await response.json();
+      console.log(serverResponse);
+      renderAgain();
     } catch (e) {
-        console.log(e);
-        return e;
+      console.log(e);
+      return e;
     }
-};
+  };
 
   return (
     <div className="different-reactions py-1">
-      <span onClick={(e)=>
-      toggleLike(e)
-      }>
+      <span onClick={(e) => toggleLike(e)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="48"
@@ -266,20 +264,8 @@ const ReactionsHover = ({postId, renderAgain}) => {
               strokeLinecap="round"
               strokeLinejoin="round"
             />
-            <circle
-              fill="#523951"
-              fillRule="nonzero"
-              cx="17"
-              cy="19"
-              r="2"
-            />
-            <circle
-              fill="#523951"
-              fillRule="nonzero"
-              cx="29"
-              cy="20"
-              r="2"
-            />
+            <circle fill="#523951" fillRule="nonzero" cx="17" cy="19" r="2" />
+            <circle fill="#523951" fillRule="nonzero" cx="29" cy="20" r="2" />
             <path
               d="M28 14.29a4.18 4.18 0 013 0A4.18 4.18 0 0133.45 16"
               stroke="#523951"

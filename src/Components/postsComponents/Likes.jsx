@@ -1,4 +1,4 @@
-const Likes = ({commentsQty, likesQty}) => {
+const Likes = ({ commentsQty, likesQty }) => {
   return (
     <div className="like-section px-3 py-2">
       <span>
@@ -59,13 +59,11 @@ const Likes = ({commentsQty, likesQty}) => {
           </g>
         </svg>
       </span>
-      
-      <span className="ml-2 about-feed links-feed">
-        {likesQty} •
-      </span>
+
+      <span className="ml-2 about-feed links-feed">{likesQty} •</span>
       <span className="about-feed links-feed"> {commentsQty} comments</span>
     </div>
-  )
-}
+  );
+};
 
-export default Likes
+export default Likes;

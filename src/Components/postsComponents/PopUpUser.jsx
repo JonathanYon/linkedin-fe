@@ -1,4 +1,4 @@
-import { Button } from "react-bootstrap"
+import { Button } from "react-bootstrap";
 
 const PopUpUser = (props) => {
   return (
@@ -9,13 +9,13 @@ const PopUpUser = (props) => {
         </div>
         <div className="ml-2 my-3 w-100">
           <div className="mb-0 align-items-center">
-            <h6 className="mb-0 mr-1 h6-post links-feed">{props.post.user.name + ' ' + props.post.user.surname}</h6>
+            <h6 className="mb-0 mr-1 h6-post links-feed">
+              {props.post.user.name + " " + props.post.user.surname}
+            </h6>
             <h6 className="mb-0 span-feed"> • 2nd</h6>
           </div>
           <div className="mr-1 d-flex justify-content-between align-items-center">
-            <p className="mb-0 about-feed-popup">
-              {props.post.user.title}
-            </p>
+            <p className="mb-0 about-feed-popup">{props.post.user.title}</p>
           </div>
         </div>
       </div>
@@ -25,7 +25,7 @@ const PopUpUser = (props) => {
         </Button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PopUpUser
+export default PopUpUser;
