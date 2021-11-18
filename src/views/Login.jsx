@@ -252,7 +252,10 @@ function Login(props) {
         </div>
 
         <div className="container d-flex flex-column justify-content-center align-items-center mod-logo-maxWidth">
-          <h5 className="mb-4">Don't have an account?</h5>
+          <h5 className="mb-4">
+            Don't have an account? Sign up or use the details below
+          </h5>
+          <h5 className="mb-4">username: Yon, password: 123456789</h5>
           <button
             id="btn-sign-up-strivefy"
             className="btn btn-outline-dark btn-large w-100"
